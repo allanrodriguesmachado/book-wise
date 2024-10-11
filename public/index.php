@@ -1,38 +1,7 @@
 <?php
+require_once __DIR__ . "/../vendor/autoload.php";
 
-$books = [
-    [
-        "id"=> "1",
-        "title"=> "O Mistério da Casa Assombrada",
-        "author"=> "Allan",
-        "description"=> "Uma intrigante história de suspense e mistério que mantém o leitor à beira da cadeira.",
-    ],
-    [
-        "id"=> "2",
-        "title"=> "As Aventuras de um Viajante",
-        "author"=> "Mariana",
-        "description"=> "Um relato emocionante sobre viagens, descobertas e os encontros inusitados pelo mundo.",
-    ],
-    [
-        "id"=> "3",
-        "title"=> "Segredos da Mente",
-        "author"=> "Carlos",
-        "description"=> "Uma exploração fascinante sobre como a mente humana funciona e seus segredos ocultos.",
-    ],
-    [
-        "id"=> "4",
-        "title"=> "Culinária Rápida e Prática",
-        "author"=> "Julia",
-        "description"=> "Receitas fáceis e rápidas para quem não tem muito tempo, mas não abre mão de uma boa refeição.",
-    ],
-    [
-        "id"=> "5",
-        "title"=> "A Arte da Poesia",
-        "author"=> "Rafael",
-        "description"=> "Uma coleção de poemas que capturam emoções e reflexões sobre a vida.",
-    ],
-];
-
+require '../data.php'
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +42,7 @@ $books = [
                 <div class="flex ">
                     <div class="w-1/4 mr-4 w-15 h-15 rounded-full"><img src="https://avatar.iran.liara.run/public" alt=""></div>
                     <div>
-                        <a href="/about-books.php?" aria-placeholder="Sobre o livro" class="font-semibold text-emerald-500 hover:text-emerald-700"><?= $book['title'] ?></a>
+                        <a href="/about-books.php?id=<?= $book['id'] ?>" aria-placeholder="Sobre o livro" class="font-semibold text-emerald-500 hover:text-emerald-700"><?= $book['title'] ?></a>
                         <div class="text-xs font-light"><?= $book['author'] ?></div>
                         <div class="text-sm font-bold "> ⭐ ⭐ ⭐ ⭐ ⭐</div>
                     </div>
