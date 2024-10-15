@@ -4,7 +4,6 @@
     <input type="text" name="search" class="border-stone-800 border-2 rounded-md focus:outline-none bg-stone-900 text-sm px-2 py-1 w-full" placeholder="Pesquisar...">
     <button type="submit" class="bg-emerald-600 py-1 px-2 rounded-md text-white hover:bg-emerald-700">Pesquisar</button>
 </form>
-
 <section class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3 flex grid gap-4 mt-4">
     <?php foreach($books AS $book): ?>
         <div class="p-2 rounded border-stone-800 bg-stone-900">
