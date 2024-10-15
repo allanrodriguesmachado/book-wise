@@ -7,23 +7,12 @@
     <title>Book Wise</title>
 </head>
 <body class="bg-stone-950 text-stone-200">
-<header class="bg-stone-900">
-    <nav class="mx-auto max-w-screen-lg flex justify-between px-8 py-4">
-        <div class="font-bold text-xl tracking-wide">Book Wise</div>
 
-        <ul class="flex space-x-4 font-bold">
-            <li><a href="/explore" class="text-emerald-600">Explorar</a></li>
-            <li><a href="/books" class="hover:underline">Livros</a></li>
-        </ul>
+<?php require "views/template/header.php" ?>
 
-        <ul>
-            <li><a href="/login" class="hover:underline">Login</a></li>
-        </ul>
-    </nav>
-</header>
-    <main class="mx-auto max-w-screen-lg space-x-7 p-4">
-        <?php require "../views/index.php" ?>
-    </main>
+<main class="mx-auto max-w-screen-lg space-x-7 p-4">
+    <?php require "views/{$view}.php" ?>
+</main>
 
 </body>
 </html>

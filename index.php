@@ -1,15 +1,15 @@
 <?php
-require_once __DIR__ . "/../vendor/autoload.php";
 
-require '../data.php';
+require 'data.php';
 
 $view = 'index';
 
-//if ($uri = $_SERVER['REQUEST_URI']) {
-//    $view = str_replace('/', '', $uri);
-//}
+if ($uri = $_SERVER['PATH_INFO']) {
+    $view = str_replace('/', '', $uri);
+}
 
-require_once '../views/template/app.php';
+//require_once '../views/template/app.php';
+require_once 'controllers/index.controller.php';
 
 ?>
 
