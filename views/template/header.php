@@ -3,8 +3,8 @@
         <div class="font-bold text-xl tracking-wide">Book Wise</div>
 
         <ul class="flex space-x-4 font-bold">
-            <li><a href="/explore" class="text-emerald-600">Explorar</a></li>
-            <li><a href="/books" class="hover:underline">Livros</a></li>
+            <li><a href="/" class="text-emerald-600">Explorar</a></li>
+            <li><a href="/book" class="hover:underline">Livros</a></li>
         </ul>
 
         <ul>

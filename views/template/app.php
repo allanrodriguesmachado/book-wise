@@ -8,8 +8,10 @@
 </head>
 <body class="bg-stone-950 text-stone-200">
 
+<?php require 'views/template/header.php'?>
 
 <main class="mx-auto max-w-screen-lg space-x-7 p-4">
+    <?php require "views/{$view}.php"?>
 </main>
 </body>
 </html>
