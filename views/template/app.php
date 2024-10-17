@@ -11,7 +11,7 @@
 <?php require 'views/template/header.php'?>
 
 <main class="mx-auto max-w-screen-lg space-x-7 p-4">
-    <?php require "views/{$view}.php"?>
+    <?php require "views/{$controller}.php"?>
 </main>
 </body>
 </html>

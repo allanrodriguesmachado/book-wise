@@ -15,7 +15,6 @@
         }
     ],
     "require": {
-        "symfony/debug": "^4.4",
         "symfony/var-dumper": "^7.1"
     }
 }
