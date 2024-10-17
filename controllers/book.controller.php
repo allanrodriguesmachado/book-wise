@@ -9,4 +9,8 @@ $listBook = array_pop($filterBook);
 
 $view = 'book';
 
-require 'views/template/app.php';
+view('book', [
+    'listBook' => $listBook,
+]);
+
+//require 'views/template/app.php';

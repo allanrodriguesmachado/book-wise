@@ -1,5 +1,14 @@
 <?php
 
-require 'data.php';
+view('index',
+    ['books' => $books]
+);
 
-require 'views/template/app.php';
+
+$db = new PDO('sqlite:database.sqlite');
+
+$query = $db->query("SELECT * FROM books");
+
+dd($query->fetchAll());
+
+//require 'views/template/app.php';
