@@ -1,10 +1,10 @@
 <?php
 
-namespace Db;
 
+namespace App\Db;
 class Connection
 {
-    public static function db()
+    public static function listBooks()
     {
         $db = new \PDO('sqlite:database.sqlite');
 
