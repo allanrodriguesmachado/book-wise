@@ -4,7 +4,7 @@ use App\Db\Connection;
 
 require 'vendor/autoload.php';
 
-$books = Connection::listBooks();
+$lists = new Connection();
 
 require "routes.php";
 

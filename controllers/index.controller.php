@@ -1,13 +1,7 @@
 <?php
 
-//$db = \Db\Connection::db();
-//var_dump($db);
+$books = $lists->listBooks();
 
 view('index',
     ['books' => $books]
 );
-
-
-
-
-//require 'views/template/app.php';

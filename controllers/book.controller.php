@@ -1,11 +1,13 @@
 <?php
-require 'data.php';
 
 $id = $_REQUEST['id'];
+$listBook = $lists->listBook($id);
 
-$filterBook = array_filter($books, fn ($item) =>  $item['id'] == $id);
 
-$listBook = array_pop($filterBook);
+
+// $filterBook = array_filter($books, fn ($item) =>  $item->id == $id);
+
+// $listBook = array_pop($filterBook);
 
 $view = 'book';
 

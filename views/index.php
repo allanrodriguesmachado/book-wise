@@ -10,12 +10,12 @@
             <div class="flex ">
                 <div class="w-1/4 mr-4 w-15 h-15 rounded-full"><img src="https://avatar.iran.liara.run/public" alt=""></div>
                 <div>
-                    <a href="book?id=<?= $book['id'] ?>" aria-placeholder="Sobre o livro" class="font-semibold text-emerald-500 hover:text-emerald-700"><?= $book['title'] ?></a>
-                    <div class="text-xs font-light"><?= $book['author'] ?></div>
+                    <a href="book?id=<?= $book->id ?>" aria-placeholder="Sobre o livro" class="font-semibold text-emerald-500 hover:text-emerald-700"><?= $book->title ?></a>
+                    <div class="text-xs font-light"><?= $book->author ?></div>
                     <div class="text-sm font-bold "> ⭐ ⭐ ⭐ ⭐ ⭐</div>
                 </div>
             </div>
-            <div class="flex font-light "><?= $book['description'] ?></div>
+            <!-- <div class="flex font-light "><?= $book->description?></div> -->
         </div>
     <?php endforeach; ?>
 </section>

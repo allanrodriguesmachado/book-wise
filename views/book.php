@@ -18,15 +18,15 @@
         </svg>
     </div>
     <blockquote>
-        <p class="text-4xl font-semibold text-gray-900 dark:text-white"><?= $listBook['title']; ?></p>
+        <p class="text-4xl font-semibold text-gray-900 dark:text-white"><?= $listBook->title; ?></p>
     </blockquote>
     <blockquote>
-        <p class="text-2xl font-semibold text-gray-900 dark:text-white mt-5"><?= $listBook['description']; ?></p>
+        <p class="text-2xl font-semibold text-gray-900 dark:text-white mt-5"><?= $listBook->description; ?></p>
     </blockquote>
     <figcaption class="flex items-center mt-6 space-x-3 rtl:space-x-reverse">
         <img class="w-6 h-6 rounded-full" src="https://avatar.iran.liara.run/public" alt="profile picture">
         <div class="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-300 dark:divide-gray-700">
-            <p class="pe-3 text-1xl font-medium text-gray-500 dark:text-gray-400"><?= $listBook['author'] ?>
+            <p class="pe-3 text-1xl font-medium text-gray-500 dark:text-gray-400"><?= $listBook->author ?>
         <!-- </cite>
             <cite class="ps-3 text-sm text-gray-500 dark:text-gray-400">CTO at Flowbite</cite> -->
         </div>
