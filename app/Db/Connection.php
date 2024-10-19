@@ -12,28 +12,17 @@ class Connection
         echo "OK";
     }
 
-    public  function listBooks()
+    public  function listBooks(?string $search = '')
     {
         $db = new \PDO('sqlite:database.sqlite');
 
-        $query = $db->query("SELECT * FROM books");
+        $sql = $db->prepare("SELECT * FROM books WHERE user_id = 2 AND title LIKE :search");
+        $sql->setFetchMode(PDO::FETCH_CLASS, Book::class);
+        $sql->bindValue(':search', "%$search%");
+        $sql->execute();
 
-        $data =  $query->fetchAll();
+       return  $sql->fetchAll();
 
-        $arrItems = [];
-
-        foreach ($data as $item) {
-            $book = new Book;
-
-            $book->id = $item["id"];
-            $book->title = $item["title"];
-            $book->description = $item["description"];
-            $book->author = $item["author"];
-
-            $arrItems[] = $book;
-        }
-
-        return $arrItems;
 
     }
 
