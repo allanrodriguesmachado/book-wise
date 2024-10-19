@@ -1,18 +1,13 @@
 <?php
 
+use App\Models\Book;
+
 $id = $_REQUEST['id'];
-$listBook = $lists->listBook($id);
 
+$listBook = $lists->query(
+    "SELECT * FROM books WHERE id = :id",
+    Book::class,
+    [':id' => $id])->fetch();
 
+view('book', compact('listBook'));
 
-// $filterBook = array_filter($books, fn ($item) =>  $item->id == $id);
-
-// $listBook = array_pop($filterBook);
-
-$view = 'book';
-
-view('book', [
-    'listBook' => $listBook,
-]);
-
-//require 'views/template/app.php';

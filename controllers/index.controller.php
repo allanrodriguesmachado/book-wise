@@ -2,8 +2,11 @@
 
 $search = $_REQUEST['search'] ?? '';
 
-$books = $lists->listBooks($search);
+$books = $lists->query(
+    'SELECT * FROM books WHERE user_id AND title LIKE :filter',
+    \App\Models\Book::class,
+    ["filter" => "%$search%"
+]);
 
-view('index',
-    ['books' => $books]
-);
+
+view('index', compact('books'));

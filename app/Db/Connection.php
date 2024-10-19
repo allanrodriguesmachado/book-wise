@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Db;
 
 use App\Models\Book;
@@ -8,46 +7,20 @@ use PDO;
 
 class Connection
 {
+    private PDO $db;
     public function __construct() {
-        echo "OK";
+        $this->db = new PDO('sqlite:database.sqlite');
     }
 
-    public  function listBooks(?string $search = '')
-    {
-        $db = new \PDO('sqlite:database.sqlite');
+    public function query(string $query, string $class, array $params) {
+        $prepare = $this->db->prepare($query);
 
-        $sql = $db->prepare("SELECT * FROM books WHERE user_id = 2 AND title LIKE :search");
-        $sql->setFetchMode(PDO::FETCH_CLASS, Book::class);
-        $sql->bindValue(':search', "%$search%");
-        $sql->execute();
+        if ($class) {
+            $prepare->setFetchMode(PDO::FETCH_CLASS, $class);
+        }
 
-       return  $sql->fetchAll();
+        $prepare->execute($params);
 
-
-    }
-
-    public function listBook(int $id) {
-        $db = new \PDO('sqlite:database.sqlite');
-
-        $query = $db->query(sprintf("SELECT * FROM books WHERE id = %s", $id));
-
-        $data =  $query->fetchObject();
-        // dd($data);
-
-        // $arrItems = [];
-
-        // foreach ($data as $item) {
-
-        //     $book = new Book;
-
-        //     $book->id = $item["id"];
-        //     $book->title = $item["title"];
-        //     $book->description = $item["description"];
-        //     $book->author = $item["author"];
-
-
-        //     $arrItems[] = $book;
-        // }
-        return $data;
+        return $prepare;
     }
 }
