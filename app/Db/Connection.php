@@ -8,8 +8,9 @@ use PDO;
 class Connection
 {
     private PDO $db;
-    public function __construct() {
-        $this->db = new PDO('sqlite:database.sqlite');
+    public function __construct(array $config) {
+        $stringConnection = $config['driver'] . ':' . $config['connection'];
+        $this->db = new PDO($stringConnection);
     }
 
     public function query(string $query, string $class, array $params) {

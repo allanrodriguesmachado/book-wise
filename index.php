@@ -4,7 +4,9 @@ use App\Db\Connection;
 
 require 'vendor/autoload.php';
 
-$lists = new Connection();
+$config = require 'config.php';
+
+$lists = new Connection($config['database']);
 
 require "routes.php";
 
